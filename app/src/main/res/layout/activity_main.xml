@@ -16,6 +16,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:text="@string/MUP"
+        android:onClick="middleUp"
         app:layout_constraintBottom_toTopOf="@+id/middle_down"
         app:layout_constraintEnd_toStartOf="@+id/back_up"
         app:layout_constraintTop_toBottomOf="@+id/gripper_toggle"
@@ -31,6 +32,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="4dp"
         android:text="@string/FORWARD"
+        android:onClick="moveForward"
         app:layout_constraintBottom_toTopOf="@+id/backward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,6 +49,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
         android:text="@string/BACKWARD"
+        android:onClick="moveBackward"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -62,6 +65,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="5dp"
         android:text="@string/BUP"
+        android:onClick="backUp"
         app:layout_constraintBottom_toTopOf="@+id/back_down"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gripper_toggle"
@@ -76,6 +80,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="20dp"
         android:text="@string/BDOWN"
+        android:onClick="backDown"
         app:layout_constraintBottom_toTopOf="@+id/forward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_up"
@@ -93,6 +98,7 @@
         android:text="@string/control_auto"
         android:textOff="@string/manual"
         android:textOn="@string/auto"
+        android:onClick="setAutoManual"
         app:layout_constraintEnd_toStartOf="@+id/gripper_toggle"
         app:layout_constraintStart_toEndOf="@+id/power"
         app:layout_constraintTop_toTopOf="parent" />
@@ -122,6 +128,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
         android:text="@string/MDOWN"
+        android:onClick="middleDown"
         app:layout_constraintBottom_toTopOf="@+id/forward"
         app:layout_constraintEnd_toStartOf="@+id/back_down"
         app:layout_constraintTop_toBottomOf="@+id/middle_up" />
@@ -138,6 +145,7 @@
         android:text="@string/control_gripper"
         android:textOff="@string/gripper_released"
         android:textOn="@string/gripper_activated"
+        android:onClick="useGripper"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/auto_toggle"
         app:layout_constraintTop_toTopOf="parent" />
@@ -152,35 +160,22 @@
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:text="@string/power"
-        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/auto_toggle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:text="BT"
-        app:layout_constraintBottom_toTopOf="@+id/joystickView_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power" />
 
     <Button
         android:id="@+id/front_up"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:text="@string/FUP"
+        android:onClick="frontUp"
         app:layout_constraintBottom_toTopOf="@+id/front_down"
         app:layout_constraintEnd_toStartOf="@+id/middle_up"
         app:layout_constraintStart_toEndOf="@+id/joystickView_left"
@@ -190,18 +185,55 @@
         android:id="@+id/front_down"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="20dp"
         android:text="@string/FDOWN"
+        android:onClick="frontDown"
         app:layout_constraintBottom_toTopOf="@+id/forward"
         app:layout_constraintEnd_toStartOf="@+id/middle_down"
         app:layout_constraintStart_toEndOf="@+id/joystickView_left"
         app:layout_constraintTop_toBottomOf="@+id/front_up" />
 
+    <Button
+        android:id="@+id/discoverable"
+        android:layout_width="128dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/discoverable"
+        android:onClick="enableDisable_Discoverable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_toggle" />
 
+    <ListView
+        android:id="@+id/lvNewDevices"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="85dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/discover"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="@string/discover"
+        android:onClick="btnDiscover"
+        app:layout_constraintStart_toEndOf="@+id/discoverable"
+        app:layout_constraintTop_toBottomOf="@+id/auto_toggle" />
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="@string/connect"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/auto_toggle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

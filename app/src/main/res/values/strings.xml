@@ -15,8 +15,11 @@
     <string name="BUP">BACK UP</string>
     <string name="BDOWN">BACK DOWN</string>
     <string name="control_auto">controlauto</string>
-    <string name="power">POWER</string>
+    <string name="power">BT</string>
     <string name="bt">BT</string>
     <string name="FUP">FRONT UP</string>
     <string name="FDOWN">FRONT DOWN</string>
+    <string name="discoverable">Discoverable</string>
+    <string name="discover">DISCOVER</string>
+    <string name="connect">CONNECT</string>
 </resources>
