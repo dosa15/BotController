@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/middle_up"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/MUP"
+        app:layout_constraintBottom_toTopOf="@+id/middle_down"
+        app:layout_constraintEnd_toStartOf="@+id/back_up"
+        app:layout_constraintTop_toBottomOf="@+id/gripper_toggle"
+        tools:text="MIDDLE\nUP" />
+
+    <Button
+        android:id="@+id/forward"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/FORWARD"
+        app:layout_constraintBottom_toTopOf="@+id/backward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/joystickView_left"
+        tools:text="FORWARD" />
+
+    <Button
+        android:id="@+id/backward"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/BACKWARD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/joystickView_left"
+        tools:text="BACKWARD" />
+
+    <Button
+        android:id="@+id/back_up"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/BUP"
+        app:layout_constraintBottom_toTopOf="@+id/back_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gripper_toggle"
+        tools:text="BACK\nUP" />
+
+    <Button
+        android:id="@+id/back_down"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/BDOWN"
+        app:layout_constraintBottom_toTopOf="@+id/forward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_up"
+        tools:text="BACK DOWN" />
+
+    <ToggleButton
+        android:id="@+id/auto_toggle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="@string/control_auto"
+        android:textOff="@string/manual"
+        android:textOn="@string/auto"
+        app:layout_constraintEnd_toStartOf="@+id/gripper_toggle"
+        app:layout_constraintStart_toEndOf="@+id/power"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView
+        android:id="@+id/joystickView_left"
+        android:layout_width="250dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
+        app:JV_backgroundColor="#009688"
+        app:JV_borderColor="#00796B"
+        app:JV_borderWidth="8dp"
+        app:JV_buttonColor="#FF6E40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_toggle" />
+
+    <Button
+        android:id="@+id/middle_down"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/MDOWN"
+        app:layout_constraintBottom_toTopOf="@+id/forward"
+        app:layout_constraintEnd_toStartOf="@+id/back_down"
+        app:layout_constraintTop_toBottomOf="@+id/middle_up" />
+
+    <ToggleButton
+        android:id="@+id/gripper_toggle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="@string/control_gripper"
+        android:textOff="@string/gripper_released"
+        android:textOn="@string/gripper_activated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/auto_toggle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/power"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="@string/power"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toStartOf="@+id/auto_toggle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="BT"
+        app:layout_constraintBottom_toTopOf="@+id/joystickView_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/power" />
+
+    <Button
+        android:id="@+id/front_up"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/FUP"
+        app:layout_constraintBottom_toTopOf="@+id/front_down"
+        app:layout_constraintEnd_toStartOf="@+id/middle_up"
+        app:layout_constraintStart_toEndOf="@+id/joystickView_left"
+        app:layout_constraintTop_toBottomOf="@+id/auto_toggle" />
+
+    <Button
+        android:id="@+id/front_down"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/FDOWN"
+        app:layout_constraintBottom_toTopOf="@+id/forward"
+        app:layout_constraintEnd_toStartOf="@+id/middle_down"
+        app:layout_constraintStart_toEndOf="@+id/joystickView_left"
+        app:layout_constraintTop_toBottomOf="@+id/front_up" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
